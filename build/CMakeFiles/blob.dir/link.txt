@@ -1,0 +1,2 @@
+/usr/bin/ar cr libblob.a  CMakeFiles/blob.dir/src/layer.cpp.o
+/usr/bin/ranlib libblob.a

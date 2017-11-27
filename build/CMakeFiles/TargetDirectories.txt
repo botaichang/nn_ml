@@ -1,0 +1,2 @@
+/home/melchior/Documents/nn_ml/build/CMakeFiles/layer.dir
+/home/melchior/Documents/nn_ml/build/CMakeFiles/test_layer.dir

@@ -1,0 +1,4 @@
+project(test_blob)
+add_executable(test_blob test/test_blob.cpp)
+add_library(blob src/blob.cpp)
+target_link_libraries(test_blob blob)

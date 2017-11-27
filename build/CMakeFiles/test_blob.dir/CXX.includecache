@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/melchior/Documents/nn_ml/src/blob.h
+string
+-
+vector
+-
+platform.h
+/home/melchior/Documents/nn_ml/src/platform.h
+
+/home/melchior/Documents/nn_ml/src/platform.h
+
+/home/melchior/Documents/nn_ml/test/test_blob.cpp
+../src/blob.h
+/home/melchior/Documents/nn_ml/src/blob.h
+iostream
+-
+
