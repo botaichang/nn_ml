@@ -11,6 +11,7 @@ SET(CMAKE_CXX_COMPILER_ID "GNU")
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/melchior/Documents/nn_ml/build/CMakeFiles/layer.dir/DependInfo.cmake"
+  "/home/melchior/Documents/nn_ml/build/CMakeFiles/absval_layer.dir/DependInfo.cmake"
   )
 
 # The include file search paths:

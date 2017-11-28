@@ -82,6 +82,7 @@ test_layer_EXTERNAL_OBJECTS =
 test_layer: CMakeFiles/test_layer.dir/test/test_layer.cpp.o
 test_layer: CMakeFiles/test_layer.dir/build.make
 test_layer: liblayer.a
+test_layer: libabsval_layer.a
 test_layer: CMakeFiles/test_layer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable test_layer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_layer.dir/link.txt --verbose=$(VERBOSE)

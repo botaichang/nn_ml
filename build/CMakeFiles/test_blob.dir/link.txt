@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/test_blob.dir/test/test_blob.cpp.o  -o test_blob -rdynamic libblob.a 

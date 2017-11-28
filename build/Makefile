@@ -57,6 +57,47 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -99,17 +140,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named layer
+# Target rules for targets named test_blob
 
 # Build rule for target.
-layer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 layer
-.PHONY : layer
+test_blob: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_blob
+.PHONY : test_blob
 
 # fast build rule for target.
-layer/fast:
-	$(MAKE) -f CMakeFiles/layer.dir/build.make CMakeFiles/layer.dir/build
-.PHONY : layer/fast
+test_blob/fast:
+	$(MAKE) -f test/CMakeFiles/test_blob.dir/build.make test/CMakeFiles/test_blob.dir/build
+.PHONY : test_blob/fast
 
 #=============================================================================
 # Target rules for targets named test_layer
@@ -121,56 +162,21 @@ test_layer: cmake_check_build_system
 
 # fast build rule for target.
 test_layer/fast:
-	$(MAKE) -f CMakeFiles/test_layer.dir/build.make CMakeFiles/test_layer.dir/build
+	$(MAKE) -f test/CMakeFiles/test_layer.dir/build.make test/CMakeFiles/test_layer.dir/build
 .PHONY : test_layer/fast
 
-src/layer.o: src/layer.cpp.o
-.PHONY : src/layer.o
+#=============================================================================
+# Target rules for targets named ncnn
 
-# target to build an object file
-src/layer.cpp.o:
-	$(MAKE) -f CMakeFiles/layer.dir/build.make CMakeFiles/layer.dir/src/layer.cpp.o
-.PHONY : src/layer.cpp.o
+# Build rule for target.
+ncnn: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ncnn
+.PHONY : ncnn
 
-src/layer.i: src/layer.cpp.i
-.PHONY : src/layer.i
-
-# target to preprocess a source file
-src/layer.cpp.i:
-	$(MAKE) -f CMakeFiles/layer.dir/build.make CMakeFiles/layer.dir/src/layer.cpp.i
-.PHONY : src/layer.cpp.i
-
-src/layer.s: src/layer.cpp.s
-.PHONY : src/layer.s
-
-# target to generate assembly for a file
-src/layer.cpp.s:
-	$(MAKE) -f CMakeFiles/layer.dir/build.make CMakeFiles/layer.dir/src/layer.cpp.s
-.PHONY : src/layer.cpp.s
-
-test/test_layer.o: test/test_layer.cpp.o
-.PHONY : test/test_layer.o
-
-# target to build an object file
-test/test_layer.cpp.o:
-	$(MAKE) -f CMakeFiles/test_layer.dir/build.make CMakeFiles/test_layer.dir/test/test_layer.cpp.o
-.PHONY : test/test_layer.cpp.o
-
-test/test_layer.i: test/test_layer.cpp.i
-.PHONY : test/test_layer.i
-
-# target to preprocess a source file
-test/test_layer.cpp.i:
-	$(MAKE) -f CMakeFiles/test_layer.dir/build.make CMakeFiles/test_layer.dir/test/test_layer.cpp.i
-.PHONY : test/test_layer.cpp.i
-
-test/test_layer.s: test/test_layer.cpp.s
-.PHONY : test/test_layer.s
-
-# target to generate assembly for a file
-test/test_layer.cpp.s:
-	$(MAKE) -f CMakeFiles/test_layer.dir/build.make CMakeFiles/test_layer.dir/test/test_layer.cpp.s
-.PHONY : test/test_layer.cpp.s
+# fast build rule for target.
+ncnn/fast:
+	$(MAKE) -f src/CMakeFiles/ncnn.dir/build.make src/CMakeFiles/ncnn.dir/build
+.PHONY : ncnn/fast
 
 # Help Target
 help:
@@ -179,15 +185,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... layer"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test_blob"
 	@echo "... test_layer"
-	@echo "... src/layer.o"
-	@echo "... src/layer.i"
-	@echo "... src/layer.s"
-	@echo "... test/test_layer.o"
-	@echo "... test/test_layer.i"
-	@echo "... test/test_layer.s"
+	@echo "... ncnn"
 .PHONY : help
 
 

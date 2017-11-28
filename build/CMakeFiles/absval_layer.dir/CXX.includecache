@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/melchior/Documents/nn_ml/src/layer.h
+stdio.h
+-
+string
+-
+vector
+-
+mat.h
+/home/melchior/Documents/nn_ml/src/mat.h
+platform.h
+/home/melchior/Documents/nn_ml/src/platform.h
+
+/home/melchior/Documents/nn_ml/src/layer/absval.cpp
+absval.h
+/home/melchior/Documents/nn_ml/src/layer/absval.h
+
+/home/melchior/Documents/nn_ml/src/layer/absval.h
+../layer.h
+/home/melchior/Documents/nn_ml/src/layer.h
+
+/home/melchior/Documents/nn_ml/src/mat.h
+stdlib.h
+-
+string.h
+-
+intrin.h
+-
+
+/home/melchior/Documents/nn_ml/src/platform.h
+

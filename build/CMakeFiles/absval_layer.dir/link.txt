@@ -1,0 +1,2 @@
+/usr/bin/ar cr libabsval_layer.a  CMakeFiles/absval_layer.dir/src/layer/absval.cpp.o
+/usr/bin/ranlib libabsval_layer.a

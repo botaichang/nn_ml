@@ -1,0 +1,3 @@
+/home/melchior/Documents/nn_ml/test/src/CMakeFiles/ncnn.dir
+/home/melchior/Documents/nn_ml/test/test/CMakeFiles/test_blob.dir
+/home/melchior/Documents/nn_ml/test/test/CMakeFiles/test_layer.dir

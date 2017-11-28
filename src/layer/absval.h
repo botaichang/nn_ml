@@ -15,7 +15,7 @@
 #ifndef LAYER_ABSVAL_H
 #define LAYER_ABSVAL_H
 
-#include "layer.h"
+#include "../layer.h"
 
 namespace ncnn {
 

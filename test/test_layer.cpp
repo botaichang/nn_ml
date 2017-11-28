@@ -8,8 +8,7 @@ using namespace ncnn;
 int main()
 {
 	Layer layer; 
-	//DEFINE_LAYER_CREATOR(BatchNorm);
-	//std::cout<<layer.type<<std::endl;
+	std::cout<<layer.name<<std::endl;
 	return 0;
 }
 
